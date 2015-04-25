@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2C48A0E4-A40F-4653-AEA2-EDE02442F932}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Skyfire.RedSpider</RootNamespace>
+    <AssemblyName>RedSpiderCore</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ConfigLoadFactory.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RedSpiderButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RedSpiderButton.Designer.cs">
+      <DependentUpon>RedSpiderButton.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RedSpiderFactory.cs" />
+    <Compile Include="RedSpiderForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RedSpiderMdiForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RedSpiderMdiForm.Designer.cs">
+      <DependentUpon>RedSpiderMdiForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RedSpiderMultiForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RedSpiderMultiForm.Designer.cs">
+      <DependentUpon>RedSpiderMultiForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RedSpiderSingleForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RedSpiderSingleForm.Designer.cs">
+      <DependentUpon>RedSpiderSingleForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SpiderForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SpiderForm.Designer.cs">
+      <DependentUpon>SpiderForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SpiderTypes.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\LoadConfigFromDemo\LoadConfigFromDemo.csproj">
+      <Project>{d48355c9-50ea-4795-a98a-1d5b65006661}</Project>
+      <Name>LoadConfigFromDemo</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LoadConfigFromSqlite\LoadConfigFromSqlite.csproj">
+      <Project>{fa647107-b7a7-4ebf-ab2f-a36b73fa2419}</Project>
+      <Name>LoadConfigFromSqlite</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LoadConfig\LoadConfig.csproj">
+      <Project>{31caeb91-9ed0-474f-895d-5914b7a91f39}</Project>
+      <Name>LoadConfig</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="RedSpiderForm.resx">
+      <DependentUpon>RedSpiderForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RedSpiderMdiForm.resx">
+      <DependentUpon>RedSpiderMdiForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RedSpiderMultiForm.resx">
+      <DependentUpon>RedSpiderMultiForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RedSpiderSingleForm.resx">
+      <DependentUpon>RedSpiderSingleForm.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
